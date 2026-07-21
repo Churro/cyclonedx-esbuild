@@ -1,0 +1,129 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "version": 1,
+  "metadata": {
+    "lifecycles": [
+      {
+        "phase": "build"
+      }
+    ],
+    "tools": {
+      "components": [
+        {
+          "type": "application",
+          "name": "esbuild",
+          "version": "0.27.7"
+        },
+        {
+          "type": "library",
+          "name": "cyclonedx-esbuild",
+          "group": "@cyclonedx",
+          "version": "1.4.2",
+          "author": "Jan Kowalleck",
+          "description": "Create CycloneDX Software Bill of Materials (SBOM) from projects built with esbuild or Bun.",
+          "licenses": [
+            {
+              "license": {
+                "id": "Apache-2.0"
+              }
+            }
+          ],
+          "externalReferences": [
+            {
+              "url": "https://github.com/CycloneDX/cyclonedx-esbuild/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "git+https://github.com/CycloneDX/cyclonedx-esbuild.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/CycloneDX/cyclonedx-esbuild#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "cyclonedx-library",
+          "group": "@cyclonedx",
+          "version": "10.0.0",
+          "author": "Jan Kowalleck",
+          "description": "Core functionality of CycloneDX for JavaScript (Node.js or WebBrowser).",
+          "licenses": [
+            {
+              "license": {
+                "id": "Apache-2.0"
+              }
+            }
+          ],
+          "externalReferences": [
+            {
+              "url": "https://github.com/CycloneDX/cyclonedx-javascript-library/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "git+https://github.com/CycloneDX/cyclonedx-javascript-library.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/CycloneDX/cyclonedx-javascript-library#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "components": [
+    {
+      "type": "library",
+      "name": "demo-lib",
+      "version": "1.0.0",
+      "bom-ref": "57a80e2e81bc4e10fe5d94e71382969cfb38d53c6555cac4b34d14cefdc97fff",
+      "description": "Fake package mirroring @hookform/resolvers: a real root package plus a legacy subpath directory that ships its own package.json for bundler resolution.",
+      "scope": "required",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/demo-lib@1.0.0"
+    },
+    {
+      "type": "library",
+      "name": "VirtualComponent src/index.ts",
+      "bom-ref": "VirtualComponent src/index.ts",
+      "description": "This is a virtual component \"src/index.ts\".",
+      "scope": "required",
+      "properties": [
+        {
+          "name": "cdx:esbuild:input:isVirtual",
+          "value": "true"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "57a80e2e81bc4e10fe5d94e71382969cfb38d53c6555cac4b34d14cefdc97fff"
+    },
+    {
+      "ref": "VirtualComponent src/index.ts",
+      "dependsOn": [
+        "57a80e2e81bc4e10fe5d94e71382969cfb38d53c6555cac4b34d14cefdc97fff"
+      ]
+    }
+  ]
+}
